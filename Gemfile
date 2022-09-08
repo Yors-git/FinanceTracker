@@ -32,6 +32,8 @@ gem "jbuilder"
 
 gem "devise"
 
+gem 'bootstrap', '~> 5.1.3'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
