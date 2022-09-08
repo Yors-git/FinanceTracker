@@ -1,7 +1,4 @@
-class WelcomeController < ActionController::Base
-  def show
-
-  end
+class WelcomeController < ApplicationController
 
   def index
 
