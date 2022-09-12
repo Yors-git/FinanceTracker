@@ -39,6 +39,8 @@ gem "devise-bootstrap5"
 
 gem "faraday"
 
+gem "font-awesome-rails"
+
 # gem 'devise-bootstrap-views', '~> 1.0'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
