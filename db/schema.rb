@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_08_173145) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_11_230148) do
+  create_table "coins", force: :cascade do |t|
+    t.string "name"
+    t.string "ticker"
+    t.decimal "last_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
