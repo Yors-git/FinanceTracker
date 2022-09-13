@@ -2,10 +2,10 @@
 
 <div class="search-area">
   <h3>Search Coins</h3>
-  <%= form_with url: '#', method: :get do |form| %>
+  <%= form_with url: search_coin_path, method: :get do |form| %>
     <div class="col-8">
       <div class="input-group input-group-lg">
-          <%= form.text_field :coin, autofocus: true, class: 'form-control', placeholder: 'Coin Symbol' %>
+          <%= form.text_field :coin, autofocus: true, class: 'form-control', placeholder: 'Enter coin name or symbol' %>
           <%= button_tag type: :submit, class: 'btn btn-success' do %>
             <%= fa_icon 'search 2x' %>
           <% end %>
@@ -13,3 +13,10 @@
     </div>
   <% end %>
 </div>
+<% if @coin %>
+  <div class="card card-header results-block mt-4">
+    <strong>Symbol: </strong><%= @coin.ticker %>
+    <strong>Name: </strong><%= @coin.name %>
+    <strong>Price: </strong>$<%= @coin.last_price %>
+  </div>
+<% end %>
