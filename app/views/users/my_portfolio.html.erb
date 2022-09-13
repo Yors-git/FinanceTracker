@@ -2,7 +2,8 @@
 
 <div class="search-area">
   <h3>Search Coins</h3>
-  <%= form_with url: search_coin_path, method: :get do |form| %>
+  <%= turbo_frame_tag 'coin' do %>
+  <%= form_with url: search_coin_path, method: :get, data: { remote: true } do |form| %>
     <div class="col-8">
       <div class="input-group input-group-lg">
           <%= form.text_field :coin, autofocus: true, class: 'form-control', placeholder: 'Enter coin name or symbol' %>
@@ -12,11 +13,8 @@
       </div>
     </div>
   <% end %>
+  <% end %>
 </div>
-<% if @coin %>
-  <div class="card card-header results-block mt-4">
-    <strong>Symbol: </strong><%= @coin.ticker %>
-    <strong>Name: </strong><%= @coin.name %>
-    <strong>Price: </strong>$<%= @coin.last_price %>
-  </div>
-<% end %>
+<div id="results">
+  <%= render 'users/result' %>
+</div>

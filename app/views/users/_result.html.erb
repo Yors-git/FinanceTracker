@@ -1,0 +1,7 @@
+<% if @coin %>
+  <div class="card card-header results-block mt-4">
+    <strong>Symbol: </strong><%= @coin.ticker %>
+    <strong>Name: </strong><%= @coin.name %>
+    <strong>Price: </strong>$<%= @coin.last_price %>
+  </div>
+<% end %>
