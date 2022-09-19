@@ -11,10 +11,5 @@ class Coin < ApplicationRecord
     rescue => exception
       return nil
     end
-    # if body['data'][0] != nil
-    #   return new(ticker: body['data'][0]['symbol'], name: body['data'][0]['name'], last_price: body['data'][0]['priceUsd'].to_d.truncate(2))
-    # else 
-    #   return nil
-    # end
   end
 end

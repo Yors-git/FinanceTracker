@@ -2,7 +2,6 @@
 
 <div class="search-area">
   <h3>Search Coins</h3>
-  <%= turbo_frame_tag 'coin' do %>
   <%= form_with url: search_coin_path, method: :get, data: { remote: true } do |form| %>
     <div class="col-8">
       <div class="input-group input-group-lg">
@@ -12,7 +11,6 @@
           <% end %>
       </div>
     </div>
-  <% end %>
   <% end %>
 </div>
 <div id="results">
