@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_11_230148) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_20_150437) do
   create_table "coins", force: :cascade do |t|
     t.string "name"
     t.string "ticker"
     t.decimal "last_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_coins", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "coin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coin_id"], name: "index_user_coins_on_coin_id"
+    t.index ["user_id"], name: "index_user_coins_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,4 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_11_230148) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "user_coins", "coins"
+  add_foreign_key "user_coins", "users"
 end

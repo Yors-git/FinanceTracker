@@ -1,0 +1,2 @@
+class UserCoinsController < ApplicationController
+end

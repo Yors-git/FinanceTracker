@@ -1,4 +1,8 @@
 class Coin < ApplicationRecord
+  has_many :user_coins
+  has_many :users, through: :user_coins
+
+  validates :name, :ticker, presence: true
 
   def self.new_lookup(ticker_symbol)
     @resp = Faraday.get "https://api.coincap.io/v2/assets" do |req|

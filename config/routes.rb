@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_coins
   devise_for :users
   # Defines the root path route ("/")
   root "welcome#index"

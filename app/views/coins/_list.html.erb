@@ -1,0 +1,28 @@
+<% if !@tracked_coins.empty? %>
+  <div class="col-8">
+    <table class="table table-bordered table-hover mt-4">
+      <thead>
+        <tr>
+          <th scope="col">Ticker</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tracked_coins.each do |coin| %>
+          <tr>
+            <th scope="row"><%= coin.ticker %></th>
+            <td><%= coin.name %></td>
+            <td><%= coin.last_price %></td>
+            <td><%= 'Action placeholder' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div class="col-8 mt-4">
+    <h5>You are not tracking any coins at the moment</h5>
+  </div>
+<% end %>
