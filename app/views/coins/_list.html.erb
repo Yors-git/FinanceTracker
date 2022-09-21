@@ -1,4 +1,4 @@
-<% if !@tracked_coins.empty? %>
+<% if !current_user.coins.empty? %>
   <div class="col-8">
     <table class="table table-bordered table-hover mt-4">
       <thead>
@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @tracked_coins.each do |coin| %>
+        <% current_user.coins.each do |coin| %>
           <tr>
             <th scope="row"><%= coin.ticker %></th>
             <td><%= coin.name %></td>
